@@ -26,15 +26,15 @@ serve("127.0.0.1", 5000):
   # on GET HTTP method at 127.0.0.1:5000/posts
   get "/posts":
     # will responds all posts
-    req.answerJson(posts)
+    return posts
   
   # on GET HTTP method at 127.0.0.1:5000/post
   get "/post$index:int":  # index is post index
     if posts.len > index:
       # try open 127.0.0.1:5000/post0
-      req.answerJson(posts[index])
+      return posts[index]
     else:
       # try open 127.0.0.1:5000/post10
-      req.answerJson({
-        "error": fmt"post index is wrong"
-      })
+      return {
+        "error": "post index is wrong"
+      }
