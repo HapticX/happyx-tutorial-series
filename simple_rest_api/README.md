@@ -1,3 +1,6 @@
-# simple_rest_api
+# Simple RestAPI In Nim Tutorial Series
 
-SSG project written in Nim with HappyX ❤
+[Part 1](https://dev.to/ethosa/writing-simple-restapi-in-nim-with-happyx-1-47f1)
+[Part 2](https://dev.to/ethosa/writing-simple-restapi-in-nim-with-happyx-2-3hof)
+
+Simple RestAPI Written in Nim with HappyX and ❤
