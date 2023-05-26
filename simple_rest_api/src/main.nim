@@ -3,6 +3,13 @@ import
   happyx
 
 
+# Request model AddPost
+# with two string fields
+model AddPost:
+  title: string
+  text: string
+
+
 # Setting up our server at `127.0.0.1:5000`
 serve("127.0.0.1", 5000):
   var posts = %*[
@@ -38,3 +45,13 @@ serve("127.0.0.1", 5000):
       return {
         "error": "post index is wrong"
       }
+  
+  # on POST HTTP method at 127.0.0.1:5000/post/
+  post "/post/[postData:AddPost]":
+    posts.add(%*{
+      "title": postData.title,
+      "text": postData.text
+    })
+    return {"response": {
+      "index": posts.len - 1
+    }}
