@@ -26,7 +26,7 @@ mount Posts:
       }
   
   # on POST HTTP method at 127.0.0.1:5000/post/
-  post "/[postData:AddPost]":
+  "/[postData:AddPost]":
     posts.add(%*{
       "title": postData.title,
       "text": postData.text
